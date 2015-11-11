@@ -120,7 +120,7 @@
                                                         <Setter Target="RootGrid.Background" 
                                                                 Value="{StaticResource MenuItemPressed}"/>
                                                         <Setter Target="Mark.Fill"
-                                                                Value="{StaticResource MenuItemSelected}"/>
+                                                                Value="{StaticResource SystemControlBackgroundAccentBrush}"/>
                                                         <Setter Target="Label.Foreground"
                                                                 Value="{StaticResource MenuItemSelectedPressed}"/>
                                                         <Setter Target="Icon.Foreground"
