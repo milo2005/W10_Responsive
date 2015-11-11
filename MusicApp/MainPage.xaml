@@ -14,11 +14,44 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Split.IsPaneOpen" Value="False"/>
+                        <Setter Target="Split.DisplayMode" Value="CompactOverlay"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="320"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Split.IsPaneOpen" Value="False"/>
+                        <Setter Target="Split.DisplayMode" Value="CompactOverlay"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="720"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Split.IsPaneOpen" Value="True"/>
+                        <Setter Target="Split.DisplayMode" Value="CompactInline"/>
+                    </VisualState.Setters>
+
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
         <SplitView 
             x:Name="Split"
             Style="{StaticResource Split}"
             DisplayMode="CompactOverlay"
-            IsPaneOpen="False"
+            IsPaneOpen="True"
             >
             <SplitView.Pane>
                 <Grid>
@@ -27,7 +60,8 @@
                         <RowDefinition />
                     </Grid.RowDefinitions>
 
-                    <Button Style="{StaticResource MenuButton}">
+                    
+                    <Button Style="{StaticResource MenuButton}" Click="click">
                         <StackPanel>
                             <Rectangle Fill="White" Height="2" Width="20" 
                                        Margin="0,0,0,3"/>

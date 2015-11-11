@@ -57,5 +57,13 @@ namespace MusicApp
             set { lista = value; }
         }
 
+        private void click(object sender, RoutedEventArgs e)
+        {
+            if (Split.IsPaneOpen)
+                Split.IsPaneOpen = false;
+            else
+                Split.IsPaneOpen = true;
+
+        }
     }
 }
