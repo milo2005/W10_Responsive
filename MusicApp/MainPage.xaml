@@ -1,0 +1,70 @@
+﻿<Page
+    x:Class="MusicApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MusicApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:MusicApp.Models"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <SplitView 
+            x:Name="Split"
+            Style="{StaticResource Split}"
+            DisplayMode="CompactOverlay"
+            IsPaneOpen="False"
+            >
+            <SplitView.Pane>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Button Style="{StaticResource MenuButton}">
+                        <StackPanel>
+                            <Rectangle Fill="White" Height="2" Width="20" 
+                                       Margin="0,0,0,3"/>
+                            <Rectangle Fill="White" Height="2" Width="20" 
+                                       Margin="0,0,0,3"/>
+                            <Rectangle Fill="White" Height="2" Width="20" 
+                                       Margin="0,0,0,3"/>
+                        </StackPanel>
+                    </Button>
+                    <ListBox 
+                        Grid.Row="1"
+                        Style="{StaticResource Menu}"
+                        ItemsSource="{x:Bind Lista}"
+                        />
+
+
+
+
+                </Grid>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    
+                    
+                    
+                </Grid>
+            </SplitView.Content>
+        </SplitView>
+
+        <RelativePanel Grid.Row="1" Height="50" 
+                       Background="{StaticResource SystemControlBackgroundAccentBrush}">
+            
+        </RelativePanel>
+        
+    </Grid>
+</Page>
